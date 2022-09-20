@@ -127,4 +127,4 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-/pv_plotter/data
+/pv_plotter/data/

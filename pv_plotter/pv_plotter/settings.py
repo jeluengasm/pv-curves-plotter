@@ -34,8 +34,6 @@ ALLOWED_HOSTS = ['*']
 PROJECT_APPS = [
     'core',
     'user',
-    'django_extensions',
-    'widget_tweaks',
 ]
 
 INSTALLED_APPS = PROJECT_APPS + [
@@ -45,6 +43,8 @@ INSTALLED_APPS = PROJECT_APPS + [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [

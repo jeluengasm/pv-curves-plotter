@@ -60,6 +60,12 @@ urlpatterns = [
         TemplateView.as_view(template_name='core/installation.html'),
         name='installation'
     ),
+
+    path(
+        'install/',
+        TemplateView.as_view(template_name='core/requerimientos.html'),
+        name='requerimientos'
+    ),
     path(
         'the-app/',
         TemplateView.as_view(template_name='core/the_app.html'),

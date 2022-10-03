@@ -1,0 +1,97 @@
+{% extends 'core/navbar.html' %}
+{% load static %}
+
+{% block title %}
+  Requerimientos
+{% endblock title %}
+
+{% block class_header %}fixed-top header-inner-pages{% endblock class_header %}
+
+{% block content %}
+<main id="main">
+
+  <!-- ======= Breadcrumbs ======= -->
+  <section class="breadcrumbs">
+    <div class="container">
+
+      <div class="d-flex justify-content-between align-items-center">
+        <h2>Requerimientos</h2>
+        <ol>
+          <li><a href="home.html">Inicio</a></li>
+          <li>Instalación</li>
+        </ol>
+      </div>
+
+    </div>
+  </section><!-- End Breadcrumbs -->
+
+  <!-- ======= About Section ======= -->
+  <section id="features" class="features">
+    <div class="container" data-aos="fade-up">
+
+      <div class="row">
+        <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+          <img src="{%static 'img/requerimientos/requerimientos1.jpg'%}" class="img-fluid" alt="">
+        </div>
+        <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
+          <div class="icon-box mt-5 mt-lg-0" data-aos="zoom-in" data-aos-delay="150">
+            <i class='bx bx-laptop'></i>
+            <h4>Hardware</h4>
+          </div>
+          <div class="content d-flex flex-column justify-content-center">
+            <ul>
+              <li><i class="ri-check-double-line"></i>Trazador de curvas IVT2203.</li>
+              <li><i class="ri-check-double-line"></i>Cable USB para transmisión/recepción de datos.</li>
+              <li><i class="ri-check-double-line"></i>Panel solar (máx. Voc de 22 V, Isc de 2.7 A).</li>
+              <li><i class="ri-check-double-line"></i>Conectores banana macho (rojo y negro).</li>
+              <li><i class="ri-check-double-line"></i>Sensor de temperatura con conector de chasis 4 polos.</li>
+              <li><i class="ri-check-double-line"></i>Computadora con puertos USB activos (2.0 en adelante).</li>
+              <li><i class="ri-check-double-line"></i>Mínimo 2 GB de memoria RAM.</li>
+              <li><i class="ri-check-double-line"></i>Resolución de pantalla mínima: 1366 x 768.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section><!-- End About Section -->
+
+  <!-- ======= Features Section ======= -->
+  <section id="features" class="features">
+    <div class="container" data-aos="fade-up">
+
+      <div class="row">
+        <div class="image col-lg-6" style='background-image: url("{%static '
+          img/requerimientos/requerimientos2.png'%}");' data-aos="fade-right">
+        </div>
+        <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
+          <div class="icon-box mt-5 mt-lg-0" data-aos="zoom-in" data-aos-delay="150">
+            <i class="bx bxl-microsoft"></i>
+            <h4>Software</h4>
+          </div>
+          <div class="content d-flex flex-column justify-content-center">
+            <p>Sistemas operativos compatibles:</p>
+            <ul>
+              <li><i class="ri-check-double-line"></i>Microsoft Windows 7/8/8.1 de 64 bits.*</li>
+              <li><i class="ri-check-double-line"></i>Microsoft Windows 10 de 64 bits.</li>
+              <li><i class="ri-check-double-line"></i>Linux (basado en Debian) de 64 bits.</li>
+            </ul>
+            <p class="fst-italic">
+              * Para el correcto funcionamiento del trazador de curvas, es necesario instalar un driver. Haga clic
+              <u><a
+                  href="https://sites.google.com/unal.edu.co/trazador-curvas/instalación/windows-788-110-x64?authuser=0">aquí</a></u>
+              para conocer el procedimiento.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section><!-- End Features Section -->
+
+</main><!-- End #main -->
+
+{% endblock content %}
+
+{% block script %}
+{% endblock script %}

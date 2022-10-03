@@ -62,7 +62,7 @@ urlpatterns = [
     ),
 
     path(
-        'install/',
+        'requerimientos/',
         TemplateView.as_view(template_name='core/requerimientos.html'),
         name='requerimientos'
     ),

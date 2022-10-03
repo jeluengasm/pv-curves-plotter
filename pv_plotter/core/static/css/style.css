@@ -500,7 +500,7 @@ h6 {
 # Sections General
 --------------------------------------------------------------*/
 section {
-  padding: 60px 0;
+  padding: 50px 0;
   overflow: hidden;
 }
 
@@ -559,6 +559,9 @@ section {
   padding-top: 20px;
 }
 
+.features .fst-italic {
+  font-size:small
+}
 .features .icon-box {
   padding-left: 15px;
 }
@@ -1422,7 +1425,7 @@ section {
 --------------------------------------------------------------*/
 
 .faq {
-  padding: 60px 0;
+  padding: 40px 0;
 }
 
 .faq .faq-list {
@@ -1432,7 +1435,7 @@ section {
 
 .faq .faq-list li {
   border-bottom: 1px solid #deefed;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   padding-bottom: 20px;
 }
 
@@ -1482,8 +1485,21 @@ section {
   display: none;
   transition: 0.6s;
 }
+#faq1 ul,
+#faq2 ul,
+#faq3 ul,
+#faq4 ul  {
+  padding-left: 7%;
+}
 
-
+#faq1 li,
+#faq2 li,
+#faq3 li,
+#faq4 li {
+  border-bottom: none;
+  padding-bottom:0%;
+  list-style:disc;
+}
 
   /*--------------------------------------------------------------
 #  Get Startet Button REGISTER
@@ -1518,9 +1534,6 @@ section {
   color: #343c3c;
 }
 
-
-.register-form {
-}
 
 .container-register-form{
   position: relative;

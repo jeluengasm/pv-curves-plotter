@@ -226,11 +226,18 @@
 
   });
 
-  /**
-   * Initiate portfolio lightbox 
-   */
+  /** 
+  *Initiate portfolio lightbox
+  */
   const portfolioLightbox = GLightbox({
     selector: '.portfolio-lightbox'
+  });  
+
+  /** adicionar 
+   * Initiate glightbox 
+   */
+  const glightbox = GLightbox({
+    selector: '.glightbox'
   });
 
   /**

@@ -66,6 +66,13 @@ urlpatterns = [
         TemplateView.as_view(template_name='core/requerimientos.html'),
         name='requerimientos'
     ),
+
+    path(
+        'error_codes/',
+        TemplateView.as_view(template_name='core/error_codes.html'),
+        name='error_codes'
+    ),
+    
     path(
         'the-app/',
         TemplateView.as_view(template_name='core/the_app.html'),

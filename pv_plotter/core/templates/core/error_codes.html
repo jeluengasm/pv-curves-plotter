@@ -1,0 +1,131 @@
+{% extends 'core/navbar.html' %}
+{% load static %}
+
+{% block title %}
+  Códigos de error
+{% endblock title %}
+
+{% block class_header %}fixed-top header-inner-pages{% endblock class_header %}
+
+{% block content %}
+<main id="main">
+
+  <!-- ======= Breadcrumbs ======= -->
+  <section class="breadcrumbs">
+    <div class="container">
+
+      <div class="d-flex justify-content-between align-items-center">
+        <h2>Códigos de error</h2>
+        <ol>
+          <li><a href="home.html">Inicio</a></li>
+          <li>FAQ</li>
+        </ol>
+      </div>
+    </div>
+  </section><!-- End Breadcrumbs -->
+
+  <!-- ======= Frequently Asked Questions Section ======= -->
+
+  <section id="faq" class="faq section-bg">
+    <div class="container">
+      <p>A continuación, se enunciarán los codigos de error que se notifican en el panel de notificaciones de la
+        aplicación y su solución correspondiente.</p><br>
+      <ul class="faq-list">
+        <li>
+          <div data-bs-toggle="collapse" class="collapsed question" href="#faq1">Error 001: No tiene permisos de
+            acceso en el puerto<i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i>
+          </div>
+          <div id="faq1" class="collapse" data-bs-parent=".faq-list">
+            <p>Microsoft Windows:</p><br>
+            <ul>
+              <li>Verifique que el trazador esté conectado correctamente.</li>
+              <li>Verifique que el puerto serial (COM) corresponde con el visualizado en el Administrador de
+                dispositivos.</li>
+              <li>Verifique si el perfil de usuario de la sesión actual posea permisos sobre el uso de puertos
+                seriales.</li>
+            </ul>
+            <p>Linux:</p><br>
+            <ul>
+              <li>Verifique que el trazador esté conectado correctamente.</li>
+              <li>Verifique que el puerto serial (TTYACM) corresponde con el identificado con el comando dmesg en el
+                terminal.</li>
+              <li>Verifique si el perfil de usuario de la sesión actual posea permisos sobre el uso de puertos
+                seriales.Conceda permisos de uso al puerto serial identificado, por medio del comando <em>sudo chmod
+                  777
+                  /dev/ttyACM&ltX&gt</em>.</li>
+            </ul>
+          </div>
+        </li>
+
+        <li>
+          <div data-bs-toggle="collapse" href="#faq2" class="collapsed question">Error 002: El puerto &lt...&gt no
+            responde<i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+          <div id="faq2" class="collapse" data-bs-parent=".faq-list">
+            <p>Microsoft Windows:</p><br>
+            <ul>
+              <li>Verifique que el trazador esté conectado correctamente.</li>
+              <li>Verifique que el cable USB conectado sea de transmisión de datos y no de alimentación únicamente.
+              </li>
+              <li>Verifique que el puerto serial (COM) corresponde con el visualizado en el Administrador de
+                dispositivos.</li>
+              <li>Verifique si el perfil de usuario de la sesión actual posea permisos sobre el uso de puertos
+                seriales.</li>
+            </ul>
+            <p>Linux:</p><br>
+            <ul>
+              <li>Verifique que el trazador esté conectado correctamente.</li>
+              <li>Verifique que el cable USB conectado sea de transmisión de datos y no de alimentación únicamente.
+              </li>
+              <li>Verifique que el puerto serial (TTYACM&ltX&gt) corresponde con el identificado con el comando dmesg
+                en el terminal.</li>
+              <li>Conceda permisos de uso al puerto serial identificado, por medio del comando <em>sudo chmod 777
+                  /dev/ttyACM&ltX&gt</em>.</li>
+            </ul>
+          </div>
+        </li>
+
+        <li>
+          <div data-bs-toggle="collapse" href="#faq3" class="collapsed question">Error 003: Archivo no válido<i
+              class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+          <div id="faq3" class="collapse" data-bs-parent=".faq-list"><br>
+            <ul>
+              <li>Verifique que el archivo a importar sea consistente con la estructura de archivos CSV recomendada en
+                la sección <u><a
+                    href="https://sites.google.com/unal.edu.co/trazador-curvas/la-aplicación/archivos-csv?authuser=0">"Aplicación/Archivos
+                    CSV"</a></u> .</li>
+              <li>Todas las filas correspondientes a las columnas "Corriente", "Tensión", "Potencia" y "Temperatura"
+                deben ser datos numéricos con el mismo separador decimal (coma o punto).</li>
+              <li>En caso de ser un archivo CSV con separador decimal coma (,), cada columna debe separarse con un
+                punto y coma (;).</li>
+              <li>En caso de ser un archivo CSV con separador decimal punto (.), cada columna debe separarse con una
+                coma (,).</li>
+            </ul>
+          </div>
+        </li>
+
+        <li>
+          <div data-bs-toggle="collapse" href="#faq4" class="collapsed question">Error 004: La carpeta de exportación
+            automática no existe<i class="bi bi-chevron-down icon-show"></i><i
+              class="bi bi-chevron-up icon-close"></i></div>
+          <div id="faq4" class="collapse" data-bs-parent=".faq-list">
+            <p>La dirección que colocó para exportar automáticamente no existe. Pruebe lo siguiente:</p><br>
+            <ul>
+              <li>Haga clic en el botón [...]. Se desplegará una ventana para selección de una nueva ruta de destino.
+              </li>
+              <li>Seleccione una ruta que exista en su equipo. Si lo considera necesario, puede crear una carpeta para
+                almacenar las mediciones automáticas.</li>
+              <li>Guarde sus cambios haciendo clic en el botón "Guardar configuración".</li>
+            </ul>
+
+          </div>
+        </li>
+
+      </ul>
+    </div>
+  </section><!-- End Frequently Asked Questions Section -->
+
+</main><!-- End #main -->
+{% endblock content %}
+
+{% block script %}
+{% endblock script %}

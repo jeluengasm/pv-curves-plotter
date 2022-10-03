@@ -5,8 +5,92 @@
   Download
 {% endblock title %}
 
+{% block class_header %}fixed-top{% endblock class_header %}
+
 {% block content %}
-<h2>Aquí va el código de Download</h2>
+  <!-- ======= Hero Section ======= -->
+  <section id="hero_d" class="d-flex flex-column justify-content-center">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-xl-8">
+          <h1>Descargar software</h1>
+          <h2>Para hacer un uso correcto de su trazador de curvas es necesario descargar el archivo ejecutable. A
+            continuación se presentarán los pasos correspondientes:</h2>
+          <a href="https://www.youtube.com/watch?v=7rLisq4AHWg&feature=emb_title&ab_channel=JhonEstebanLuengasMachado"
+            class="glightbox play-btn mb-4"></a>
+        </div>
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+    <!-- ======= Features Section ======= -->
+    <section id="download" class="features section-bg">
+      <div class="container">
+
+        <div class="row content">
+          <div class="col-md-5 order-1 order-md-2" data-aos="fade-left">
+            <img src="{%static 'img/download/download1.png'%}" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7 pt-5 order-2 order-md-1" data-aos="fade-right">
+            <h3>Paso 1</h3>
+            <p>
+              Ingrese al siguiente link y abra a la carpeta "Aplicación": <a href="https://bit.ly/3hLRjYN"
+                class="btn btn-warning">Link</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="row content">
+          <div class="col-md-5" data-aos="fade-right">
+            <img src="{%static 'img/download/download2.png'%}" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7 pt-5" data-aos="fade-left">
+            <h3>Paso 2</h3>
+            <p>
+              Seleccione la carpeta "Dataset" (1) y la carpeta del sistema operativo donde realizará las pruebas
+              correspondientes (2), luego haga clic en "Descargar" (3).
+            </p>
+          </div>
+        </div>
+
+        <div class="row content">
+          <div class="col-md-5 order-1 order-md-2" data-aos="fade-left">
+            <img src="{%static 'img/download/download3.png'%}" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7 pt-5 order-2 order-md-1" data-aos="fade-right">
+            <h3>Paso 3</h3>
+            <p>
+              Una vez descargados los archivos, haga clic sobre el archivo comprimido (1) y descomprima los archivos (2)
+              en la carpeta de su preferencia.
+            </p>
+            <p class="fst-italic">
+              NOTA: NO guarde los archivos en una carpeta protegida por el sistema operativo (Por ejemplo, archivos de
+              programa), de lo contrario el trazador no funcionará.
+            </p>
+          </div>
+        </div>
+
+        <div class="row content">
+          <div class="col-md-5" data-aos="fade-right">
+            <img src="{%static 'img/download/download4.png'%}" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7 pt-5" data-aos="fade-left">
+            <h3>Paso 4</h3>
+            <p>
+              Una vez descomprimidos, le deben aparecer las carpetas "Dataset"
+              y la del sistema operativo que eligió.
+            </p>
+            <p class="fst-italic">
+              Última versión de la aplicación: 1.8.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Features Section -->
+  </main>
+  <!--End main-->
 {% endblock content %}
 
 {% block script %}

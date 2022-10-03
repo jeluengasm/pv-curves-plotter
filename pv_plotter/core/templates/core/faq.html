@@ -2,14 +2,110 @@
 {% load static %}
 
 {% block title %}
-  Preguntas y respuestas
+  Preguntas frecuentes
 {% endblock title %}
 
 {% block class_header %}fixed-top header-inner-pages{% endblock class_header %}
 
 {% block content %}
-<br><br>
-<h2>Aquí va el código de Preguntas y Respuestas</h2>
+<main id="main">
+
+  <!-- ======= Breadcrumbs ======= -->
+  <section class="breadcrumbs">
+    <div class="container">
+
+      <div class="d-flex justify-content-between align-items-center">
+        <h2>Preguntas frecuentes</h2>
+        <ol>
+          <li><a href="home.html">Inicio</a></li>
+          <li>PQR</li>
+        </ol>
+      </div>
+
+    </div>
+  </section><!-- End Breadcrumbs -->
+
+  <!-- ======= Frequently Asked Questions Section ======= -->
+
+  <section id="faq" class="faq section-bg">
+    <div class="container">
+      <ul class="faq-list">
+        <li>
+          <div data-bs-toggle="collapse" class="collapsed question" href="#faq1">¿Qué es el trazador de curvas I-V?<i
+              class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+          <div id="faq1" class="collapse" data-bs-parent=".faq-list">
+            <p>
+              El trazador de curvas I-V es un dispositivo electrónico diseñado para caracterizar las curvas de
+              corriente-tensión y potencia-tensión de paneles fotovoltaicos.
+            </p>
+          </div>
+        </li>
+
+        <li>
+          <div data-bs-toggle="collapse" href="#faq2" class="collapsed question">¿Dónde se debe colocar el sensor de
+            temperatura del módulo fotovoltaico?<i class="bi bi-chevron-down icon-show"></i><i
+              class="bi bi-chevron-up icon-close"></i></div>
+          <div id="faq2" class="collapse" data-bs-parent=".faq-list">
+            <p>
+              IEC 61829: 2015 Matriz fotovoltaica (PV): la medición in situ de las características de voltaje de
+              corriente recomienda que un sensor térmico plano con cables finos se conecte mecánicamente directamente
+              a la lámina posterior en el medio de un módulo. El sensor térmico debe estar al menos a 10 cm de
+              cualquier caja de conexiones, pero frente a una parte activa del módulo. El método de conexión no debe
+              cambiar la temperatura del módulo fotovoltaico.
+            </p>
+          </div>
+        </li>
+
+        <li>
+          <div data-bs-toggle="collapse" href="#faq3" class="collapsed question">¿Puedo realizar mediciones de curva
+            I-V a bajos niveles de irradiancia?<i class="bi bi-chevron-down icon-show"></i><i
+              class="bi bi-chevron-up icon-close"></i></div>
+          <div id="faq3" class="collapse" data-bs-parent=".faq-list">
+            <p>
+              La forma de la curva I-V varía con la irradiancia y, por debajo de un nivel crítico de irradiación, la
+              forma de la curva cambia dramáticamente. Esto puede provocar errores al evaluar el rendimiento del
+              sistema. Se pueden esperar malos resultados cuando las mediciones se toman con baja irradiancia.
+            </p>
+          </div>
+        </li>
+
+        <li>
+          <div data-bs-toggle="collapse" href="#faq4" class="collapsed question">¿Qué sucede si la irradiancia cambia
+            durante una medición de curva I-V?<i class="bi bi-chevron-down icon-show"></i><i
+              class="bi bi-chevron-up icon-close"></i></div>
+          <div id="faq4" class="collapse" data-bs-parent=".faq-list">
+            <p>
+              Idealmente, las mediciones de la curva I-V deben hacerse cuando hay un cielo despejado y poco viento.
+              Los
+              cambios en la irradiancia producirán variaciones en la temperatura del módulo fotovoltaico que pueden
+              afectar la precisión de las mediciones de la curva I-V. Si la irradiación ha aumentado
+              significativamente
+              inmediatamente antes de realizar las mediciones, es posible que la temperatura del módulo fotovoltaico
+              no se haya estabilizado. Los cambios en la irradiancia durante una medición de curva I-V pueden influir
+              en la forma de la curva I-V.
+            </p>
+          </div>
+        </li>
+
+        <li>
+          <div data-bs-toggle="collapse" href="#faq5" class="collapsed question">¿Por qué es importante el trazado de
+            curvas I-V? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+          <div id="faq5" class="collapse" data-bs-parent=".faq-list">
+            <p>
+              La curva I-V proporciona un medio rápido y eficaz para acceder al verdadero rendimiento de los módulos o
+              cadenas solares fotovoltaicas. En un sistema PV que funcione correctamente, la forma de la curva debe
+              seguir el perfil normal y los valores medidos de Is / c, Impp, Vo / c, Vmpp y Pmax deben ser los
+              esperados para las condiciones ambientales en el momento de la medición.
+            </p>
+          </div>
+        </li>
+
+      </ul>
+
+    </div>
+  </section><!-- End Frequently Asked Questions Section -->
+
+</main><!-- End #main -->
 {% endblock content %}
 
 {% block script %}

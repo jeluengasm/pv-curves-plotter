@@ -433,7 +433,7 @@ h6 {
 
 #hero .container {
   position: relative;
-  padding-top: 74px;
+  padding-top: 72px;
   text-align: center;
 }
 
@@ -500,7 +500,7 @@ h6 {
 # Sections General
 --------------------------------------------------------------*/
 section {
-  padding: 50px 0;
+  padding: 50px 0; 
   overflow: hidden;
 }
 
@@ -562,6 +562,7 @@ section {
 .features .fst-italic {
   font-size:small
 }
+
 .features .icon-box {
   padding-left: 15px;
 }
@@ -1230,7 +1231,6 @@ section {
   color: #fff;
 }
 
-
 /*--------------------------------------------------------------
 # Download - Hero Section 
 --------------------------------------------------------------*/
@@ -1435,7 +1435,7 @@ section {
 
 .faq .faq-list li {
   border-bottom: 1px solid #deefed;
-  margin-bottom: 10px;
+  margin-bottom: 10px; 
   padding-bottom: 20px;
 }
 
@@ -1485,6 +1485,7 @@ section {
   display: none;
   transition: 0.6s;
 }
+
 #faq1 ul,
 #faq2 ul,
 #faq3 ul,
@@ -1640,6 +1641,5 @@ form .button input{
   outline: none;
   color: #fff;
   background: #fcc258;
-
 
 }

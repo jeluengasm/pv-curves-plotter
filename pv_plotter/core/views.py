@@ -18,6 +18,14 @@ class LoginView(TemplateView):
         return context
 
 
+class AuthView(TemplateView):  # TODO RedirectView
+    template_name = 'core/home.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
+
+
 class RegisterView(TemplateView):
     template_name = 'core/register.html'
 

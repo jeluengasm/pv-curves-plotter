@@ -43,51 +43,51 @@
     <div class="container d-flex align-items-center justify-content-lg-between">
 
       <a href="index.html" class="logo me-auto me-lg-0"><img
-          src="{%static 'img/fondo2.jpg'%}"
+          src="{%static 'img/LIATER_LOGO_BLACK.png'%}"
           alt="" class="img-fluid"></a>
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a class="nav-link scrollto active" href="home">Inicio</a></li>
-          <li><a class="nav-link scrollto" href="#about">Descargar Software</a></li>
-          <li class="dropdown"><a href="#"><span>Instalación</span> <i class="bi bi-chevron-down"></i></a>
+          <li><a class="nav-link scrollto active" href="{% url 'core:home' %}">Inicio</a></li>
+          <li class="dropdown"><a href="{% url 'core:installation' %}"><span>Instalación</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="#">Requerimientos</a></li>
-              <li><a href="#">Conexión física del trazador</a></li>
-              <li><a href="#">Windows 7/8/8.1/10 x64</a></li>
+              <li><a href="{% url 'core:installation' %}#download">Descargar software</a></li>
+              <li><a href="{% url 'core:installation' %}#requirements">Requerimientos</a></li>
+              <li><a href="{% url 'core:installation'%}#connection">Conexión física del trazador</a></li>
+              <li><a href="{% url 'core:installation' %}#windows">Windows 7/8/8.1/10 x64</a></li>
             </ul>
           </li>
-          <li class="dropdown"><a href="#"><span>La aplicación</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown"><a href="{% url 'core:the_app' %}"><span>La aplicación</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="#">Interfaz</a></li>
-              <li><a href="#">Opciones del trazador</a></li>
-              <li><a href="#">Selección de puerto</a></li>
-              <li><a href="#">Info. panel</a></li>
-              <li><a href="#">Obtener datos</a></li>
-              <li><a href="#">Mediciones automáticas</a></li>
-              <li><a href="#">Importar datos</a></li>
-              <li><a href="#">Exportar datos</a></li>
-              <li><a href="#">Borrar gráficas</a></li>
-              <li><a href="#">Rejillas</a></li>
-              <li><a href="#">Gráfica</a></li>
-              <li><a href="#">Archivos CSV</a></li>
+              <li><a href="{% url 'core:the_app' %}#ui">Interfaz</a></li>
+              <li><a href="{% url 'core:the_app' %}#options">Opciones del trazador</a></li>
+              <li><a href="{% url 'core:the_app' %}#port">Selección de puerto</a></li>
+              <li><a href="{% url 'core:the_app' %}#info">Info. panel</a></li>
+              <li><a href="{% url 'core:the_app' %}#obtain-data">Obtener datos</a></li>
+              <li><a href="{% url 'core:the_app' %}#auto">Mediciones automáticas</a></li>
+              <li><a href="{% url 'core:the_app' %}#import">Importar datos</a></li>
+              <li><a href="{% url 'core:the_app' %}#export">Exportar datos</a></li>
+              <li><a href="{% url 'core:the_app' %}#delete-graph">Borrar gráficas</a></li>
+              <li><a href="{% url 'core:the_app' %}#grid">Rejillas</a></li>
+              <li><a href="{% url 'core:the_app' %}#graph">Gráfica</a></li>
+              <li><a href="{% url 'core:the_app' %}#csv">Archivos CSV</a></li>
             </ul>
           </li>
-          <li class="dropdown"><a href="#"><span>PQR</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown"><a href="{% url 'core:faq' %}"><span>PQR</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="#">Códigos de error</a></li>
-              <li><a href="#">Preguntas frecuentes</a></li>
+              <li><a href="{% url 'core:faq' %}#error-codes">Códigos de error</a></li>
+              <li><a href="{% url 'core:faq' %}#faq">Preguntas frecuentes</a></li>
             </ul>
           </li>
-          <li><a class="nav-link scrollto" href="#about">Acerca de</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'core:about_us' %}">Acerca de</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'core:contact_us' %}">Contáctenos</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
       {% if user.is_authenticated %}
-      <a href="#about" class="get-started-btn scrollto">Salir</a>
+      <a href="{% url 'core:logout' %}" class="get-started-btn scrollto">Salir</a>
       {% else %}
-      <a href="login" class="get-started-btn scrollto">Ingrese</a>
+      <a href="{% url 'core:login' %}" class="get-started-btn scrollto">Ingrese</a>
       {% endif %}
       
     </div>

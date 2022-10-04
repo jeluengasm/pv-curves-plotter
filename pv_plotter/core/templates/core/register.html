@@ -6,9 +6,8 @@
 {% endblock title %}
 {% block class_header %}fixed-top header-inner-pages{% endblock class_header %}
 {% block content %}
-
-
-  <section id="hero" class="vh-100">
+<br><br><br>
+<section id="hero" class="vh-100">
     <div class="container bg-light p-3 rounded-5 text-secondary shadow-lg mb-20" style="width: 35rem;">
         <div class="d-flex justify-content-center">
             <img src="{%static 'img/register_icon.svg'%}" class="img-register-primary" alt="register-icon" style="height: 5rem; ">
@@ -61,9 +60,7 @@
                     </label>
                 </div>
             </div>
-            <div class="get-started-btn-register w-100 mt-3 rounded-5 text-dark fs-5 fw-semibold shadow-sm" role="button" aria-disabled="true">
-                Registrar
-            </div>
+            <a href="{% url 'core:register_done' %}" class="get-started-btn-register text-dark ">Registrar</a>
         </form>
     </div>
 </section>

@@ -16,6 +16,16 @@ urlpatterns = [
         name='login'
     ),
     path(
+        'login/auth',
+        views.AuthView.as_view(),
+        name='auth'
+    ),
+    path(
+        'logout/',
+        views.HomeView.as_view(),  # TODO: change view
+        name='logout'
+    ),
+    path(
         'register/',
         views.RegisterView.as_view(),
         name='register'
@@ -41,14 +51,14 @@ urlpatterns = [
         name='pv_analysis'
     ),
     path(
-        'about/',
-        TemplateView.as_view(template_name='core/about.html'),
-        name='about'
+        'about-us/',
+        TemplateView.as_view(template_name='core/about-us.html'),
+        name='about_us'
     ),
     path(
-        'download/',
-        TemplateView.as_view(template_name='core/download.html'),
-        name='download'
+        'contact-us/',
+        TemplateView.as_view(template_name='core/contact-us.html'),
+        name='contact_us'
     ),
     path(
         'faq/',
@@ -60,19 +70,6 @@ urlpatterns = [
         TemplateView.as_view(template_name='core/installation.html'),
         name='installation'
     ),
-
-    path(
-        'requerimientos/',
-        TemplateView.as_view(template_name='core/requerimientos.html'),
-        name='requerimientos'
-    ),
-
-    path(
-        'error_codes/',
-        TemplateView.as_view(template_name='core/error_codes.html'),
-        name='error_codes'
-    ),
-    
     path(
         'the-app/',
         TemplateView.as_view(template_name='core/the_app.html'),

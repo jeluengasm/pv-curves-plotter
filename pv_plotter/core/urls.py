@@ -62,9 +62,9 @@ urlpatterns = [
     ),
 
     path(
-        'requerimientos/',
-        TemplateView.as_view(template_name='core/requerimientos.html'),
-        name='requerimientos'
+        'requirements/',
+        TemplateView.as_view(template_name='core/requirements.html'),
+        name='requirements'
     ),
 
     path(

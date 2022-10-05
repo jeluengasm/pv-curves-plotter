@@ -21,20 +21,20 @@ Log in
           <div class="input-group-text bg-secondary color-white border border-3">
               <img src="{%static 'img/user_icon.svg'%}" class="img-register-primary" alt="username-icon" style="height: 1rem;">
           </div>
-          <input class="form-control" type="text" placeholder="Nombre de usuario">
+          <input id="email" class="form-control" type="text" placeholder="Nombre de usuario">
       </div>
       <div class="input-group mt-2">
           <div class="input-group-text bg-secondary border border-3">
               <img src="{%static 'img/padlock_icon.svg'%}" class="img-register-primary" alt="padlock-icon" style="height: 1rem;">
           </div>
-          <input class="form-control" type="password" placeholder="Contraseña">
+          <input id="password" class="form-control" type="password" placeholder="Contraseña">
       </div>
       <div class="d-flex justify-content-around mt-1.5">
           <div class="pt-1">
               <a href="{% url 'core:recovery' %}" class="text-decoration-none text-black fw-semibold fst-italic" style="font-size: 0.9rem;">¿Olvidaste tu contraseña?</a>
           </div>
       </div>
-      <a href="{% url 'core:auth' %}" class="get-started-btn-register text-dark ">Ingresar</a>
+      <button class="get-started-btn-register text-dark login" data-url="{% url 'api:login' %}" data-success="{% url 'core:home' %}">Ingresar</button>
       <div class="d-flex gap-1 justify-content-center mt-1">
           <div>
               ¿No tienes una cuenta?
@@ -46,4 +46,12 @@ Log in
 
 {% endblock content %}
 {% block script %}
+<script src="{% static 'js/loginUser.js' %}"></script>
+<script>
+    $(document).ready(function(){
+        $(".login").click(function(){
+            loginUser(this)
+        })
+    })
+</script>
 {% endblock script %}

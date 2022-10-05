@@ -34,9 +34,12 @@ ALLOWED_HOSTS = ['*']
 PROJECT_APPS = [
     'core',
     'user',
+    'pv_api',
+    'rest_framework',
+    'rest_framework.authtoken',
 ]
 
-INSTALLED_APPS = PROJECT_APPS + [
+INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -45,7 +48,8 @@ INSTALLED_APPS = PROJECT_APPS + [
     'django.contrib.staticfiles',
     'django_extensions',
     'widget_tweaks',
-]
+    'corsheaders',
+] + PROJECT_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -55,6 +59,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'pv_plotter.urls'
@@ -147,3 +152,23 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'user.User'
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:8000",
+    "http://localhost:8080",
+]
+
+REST_AUTH_SERIALIZERS = {
+    "USER_DETAILS_SERIALIZER": "pv_api.serializers.UserItemSerializer",
+}
+
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework.authentication.BasicAuthentication",
+        "rest_framework.authentication.SessionAuthentication",
+        "rest_framework.authentication.TokenAuthentication",
+    ],
+    "DEFAULT_PERMISSION_CLASSES": (
+        "rest_framework.permissions.IsAuthenticated",
+    ),
+}

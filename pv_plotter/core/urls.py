@@ -21,11 +21,6 @@ urlpatterns = [
         name='auth'
     ),
     path(
-        'logout/',
-        views.HomeView.as_view(),  # TODO: change view
-        name='logout'
-    ),
-    path(
         'register/',
         views.RegisterView.as_view(),
         name='register'

@@ -1643,3 +1643,7 @@ form .button input{
   background: #fcc258;
 
 }
+
+.btn-logout{
+  background: none;
+}

@@ -1,14 +1,19 @@
 from django.utils import timezone
 from django.contrib.auth.models import AbstractUser
 from django.db import models
-
 from .managers import UserManager
-
 from django.core.validators import RegexValidator
+from django.contrib.auth.validators import UnicodeUsernameValidator
 
 
 class User(AbstractUser):
-    username = None
+    username = models.CharField(
+        max_length=50,
+        unique=True,
+        validators=[UnicodeUsernameValidator()],
+        blank=True,
+        error_messages={'unique': 'A user with that username already exists.'},
+    )
 
     email = models.EmailField(verbose_name='email address', unique=True)
 
@@ -25,14 +30,6 @@ class User(AbstractUser):
         max_length=11,
         blank=True,
     )
-
-    # city = models.ForeignKey(
-    #     'app.City',
-    #     verbose_name='city',
-    #     on_delete=models.SET_NULL,
-    #     null=True,
-    #     blank=True,
-    # )
 
     phone_number = models.CharField(
         blank=True,

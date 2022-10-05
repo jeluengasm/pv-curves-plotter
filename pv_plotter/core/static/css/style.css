@@ -1643,3 +1643,11 @@ form .button input{
   background: #fcc258;
 
 }
+
+
+.regis {
+  width: 25rem;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 25px;
+}

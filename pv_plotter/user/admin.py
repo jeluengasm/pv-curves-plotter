@@ -12,7 +12,7 @@ class CustomUserAdmin(UserAdmin):
         'id',
         'first_name',
         'last_name',
-        # 'city',
+        'username',
         'email',
         'is_staff',
         'is_active',
@@ -31,8 +31,8 @@ class CustomUserAdmin(UserAdmin):
                 'fields': (
                     ('first_name', 'last_name',),
                     ('legal_id_type', 'legal_id',),
+                    'username',
                     'address',
-                    # 'city',
                     ('email', 'phone_number',),
                     'photo',
                     'created_at',

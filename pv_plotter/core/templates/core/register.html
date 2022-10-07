@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-  Home
+    Regístrese
 {% endblock title %}
 {% block class_header %}fixed-top header-inner-pages{% endblock class_header %}
 {% block content %}
@@ -12,38 +12,45 @@
         <div class="d-flex justify-content-center">
             <img src="{%static 'img/register_icon.svg'%}" class="img-register-primary" alt="register-icon" style="height: 5rem; ">
             </div>
-        <div class="register text-center fs-2 fw-semibold">Formulario de registro</div>
-        <form action="#">
+        <div class="register text-center fs-2 fw-bold p-3">Formulario de registro</div>
+        <form id="formReg" method="post" action="{% url 'core:register_done' %}" data-url="{% url 'api:register' %}">
+            {% csrf_token %}
             <div class="user-details">
                 <div class="input-box">
                     <span class="details fs-7 fw-bold">Nombre</span>
-                    <input type="text" placeholder="Ingrese su nombre" required>
+                    <input name="first_name" type="text" placeholder="Ingrese su nombre" required>
+                </div>
+                <div class="input-box">
+                    <span class="details fs-7 fw-bold">Apellido</span>
+                    <input name="last_name" type="text" placeholder="Ingrese su apellido" required>
                 </div>
                 <div class="input-box">
                     <span class="details fs-7 fw-bold">Nickname</span>
-                    <input type="text" placeholder="Ingrese su Nickname" required>
+                    <input name="username" type="text" placeholder="Ingrese su nickname" required>
                 </div>
                 <div class="input-box">
                     <span class="details fs-7 fw-bold">Correo electrónico</span>
-                    <input type="text" placeholder="Ingrese su correo electrónico" required>
+                    <input name="email" type="email" placeholder="Ingrese su correo electrónico" required>
                 </div>
                 <div class="input-box">
                     <span class="details fs-7 fw-bold">Teléfono</span>
-                    <input type="text" placeholder="Ingrese su teléfono" required>
+                    <input name="phone_number" type="number" placeholder="Ingrese su teléfono" required>
+                </div>
+                <div class="input-box">
                 </div>
                 <div class="input-box">
                     <span class="details fs-7 fw-bold">Contraseña</span>
-                    <input type="text" placeholder="Ingrese su contraseña" required>
+                    <input name="password" type="password" placeholder="Escriba su contraseña" required>
                 </div>
                 <div class="input-box">
                     <span class="details fs-7 fw-bold">Confirmar contraseña</span>
-                    <input type="text" placeholder="Confirme su contraseña" required>
+                    <input name="password2" type="password" placeholder="Confirme su contraseña" required>
                 </div>
             </div>
             <div class="gender-details">
-                <input type="radio" name="gender" id="dot-1">
-                <input type="radio" name="gender" id="dot-2">
-                <input type="radio" name="gender" id="dot-3">
+                <input type="radio" name="gender" id="dot-1" value="M">
+                <input type="radio" name="gender" id="dot-2" value="F">
+                <input type="radio" name="gender" id="dot-3" value="N">
                 <span class="gender-title fs-7 fw-bold">Género</span>
                 <div class="category">
                     <label for="dot-1">
@@ -60,11 +67,15 @@
                     </label>
                 </div>
             </div>
-            <a href="{% url 'core:register_done' %}" class="get-started-btn-register text-dark ">Registrar</a>
+            <button class="get-started-btn-register text-dark" type="button">Registrar</button>
         </form>
     </div>
 </section>
 
 {% endblock content %}
 {% block script %}
+<script src="{% static 'js/registerUser.js' %}"></script>
+<script>
+    $('.get-started-btn-register').click(function() {registerUser()});
+</script>
 {% endblock script %}

@@ -19,14 +19,14 @@ class User(AbstractUser):
 
     age = models.FloatField(null=True, verbose_name='age')
 
-    sex = models.CharField(
+    gender = models.CharField(
         choices=(
             ('M', 'Male'),
             ('F', 'Female'),
             ('I', 'Intersexual'),
             ('N', 'No response'),
         ),
-        verbose_name='sex',
+        verbose_name='gender',
         max_length=11,
         blank=True,
     )
@@ -55,6 +55,7 @@ class User(AbstractUser):
     legal_id = models.CharField(
         max_length=10,
         verbose_name='legal ID',
+        blank=True,
     )
 
     address = models.CharField(

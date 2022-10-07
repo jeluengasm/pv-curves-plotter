@@ -42,7 +42,7 @@
   <header id="header" class="{% block class_header %}{% endblock class_header %}">
     <div class="container d-flex align-items-center justify-content-lg-between">
 
-      <a href="index.html" class="logo me-auto me-lg-0"><img
+      <a href="{% url 'core:home' %}" class="logo me-auto me-lg-0"><img
           src="{%static 'img/LIATER_LOGO_BLACK.png'%}"
           alt="" class="img-fluid"></a>
 

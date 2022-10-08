@@ -1,5 +1,15 @@
 # Photovoltaic Plotter
 
+
+  - [Description](#description)
+    - [Developers](#developers)
+    - [Tools](#tools)
+  - [Installation](#installation)
+    - [For development](#for-development)
+      - [Environment setup](#environment-setup)
+  - [Testing](#testing)
+  - [Open browser](#open-browser)
+
 ## Description
 
 This project is an extension to the development of the photovoltaic curve tracer, presented in the diploma course on photovoltaic installations, given by [LIATER](https://ingenieria.unal.edu.co/liater/) at [Universidad Nacional de Colombia](https://bogota.unal.edu.co/).
@@ -13,7 +23,7 @@ The objective of this project is the implementation of a web application that pl
 - Jhon Esteban Luengas Machado ([@jeluengasm](https://github.com/jeluengasm))
 
 
-###Tools
+### Tools
 
 - Front End:
     - HTML
@@ -79,7 +89,7 @@ This command will create two containers of the `app` and `postgres` images (see 
     ```
 This command will start the containers and open a connection to the Django server (default is [http://localhost:8000](http://localhost:8000)). If the server doesn't respond, stop the containers and re-run them with the above command. If you want to change the port, edit line `14` in `docker-compose.yml`.
 
-### Testing
+## Testing
 
 The current proyect uses Pytest to run the tests, in order to verify that the API designed in the code works correctly. To perform the tests, execute the command:
 
@@ -87,6 +97,6 @@ The current proyect uses Pytest to run the tests, in order to verify that the AP
     docker compose exec app pytest
    ```
 
-### Open browser
+## Open browser
 
 The application will run in the following url: `http://localhost:8000`

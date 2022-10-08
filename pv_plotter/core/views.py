@@ -1,4 +1,5 @@
 from django.views.generic import TemplateView
+from .utils import PVPlotly
 
 
 class HomeView(TemplateView):
@@ -50,8 +51,10 @@ class RestorePasswordView(TemplateView):
 
 
 class PVPlotView(TemplateView):
-    template_name = 'core/login.html'
+    template_name = 'core/pv_analysis.html'
 
     def get_context_data(self, **kwargs):
+        plt = PVPlotly()
         context = super().get_context_data(**kwargs)
+        context['figure'] = plt.render_layout()
         return context

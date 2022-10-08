@@ -1,5 +1,8 @@
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
+from core.models import PVData
+from rest_framework.response import Response
+from rest_framework import status
 
 
 class UserTokenSerializer(serializers.ModelSerializer):
@@ -16,4 +19,10 @@ class UserTokenSerializer(serializers.ModelSerializer):
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = get_user_model()
+        fields = '__all__'
+
+
+class UploadFileSerializer(serializers.Serializer):
+    class Meta:
+        model = PVData
         fields = '__all__'

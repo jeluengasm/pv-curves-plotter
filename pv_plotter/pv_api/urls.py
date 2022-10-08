@@ -1,5 +1,6 @@
 from django.urls import path
-from .views import LoginUserView, LogoutUserView, RegisterUserView
+from .views import LoginUserView, LogoutUserView, \
+                    RegisterUserView, PVView, PVPlotView
 
 
 app_name = 'api'
@@ -19,5 +20,15 @@ urlpatterns = [
         'register/',
         RegisterUserView.as_view(),
         name='register'
+    ),
+    path(
+        'pv-analysis/',
+        PVView.as_view(),
+        name='pv_analysis'
+    ),
+    path(
+        'pv-analysis/plot/',
+        PVPlotView.as_view(),
+        name='plot_data'
     ),
 ]

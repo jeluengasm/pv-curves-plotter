@@ -1653,3 +1653,70 @@ form .button input{
 .btn-logout{
   background: none;
 }
+.btn-filter {
+  /* color: rgba(0, 0, 0, 0.699); */
+  background-color: #ffbb38;
+  border-radius: 10px;
+  padding: 7px 25px 8px 25px;
+  white-space: nowrap;
+  transition: 0.3s;
+  font-size: 20px;
+  display: inline-block;
+  border: 2px solid #ffe8bb;
+  width: 120px;
+}
+
+.btn-filter:hover {
+  background: #fcc258;
+  color: #ffffffd3;
+}
+
+.btn-filter:disabled{
+  background: #cea14e;
+  color: #ffffffd3;
+}
+
+.btn-import {
+  color: rgba(0, 0, 0, 0.699);
+  background-color: #ffbb38;
+  border-radius: 10px;
+  /* padding: 7px 25px 8px 25px; */
+  white-space: nowrap;
+  transition: 0.3s;
+  font-size: 20px;
+  display: block;
+  border: 2px solid #ffe8bb;
+  width: 200px;
+  height: 45px;
+}
+
+.btn-import:hover {
+  background: #fcc258;
+  color: #ffffffd3;
+}
+
+.btn-import:disabled{
+  background: #cea14e;
+  color: #ffffffd3;
+}
+
+.canvas{
+  height: 600px;
+}
+
+.visibility-on {
+  color: #3970d6;
+  border-radius: 10px;
+}
+.visibility-off {
+  color: #545961;
+  border-radius: 10px;
+}
+.pencil {
+  color: #FB8C00;
+  border-radius: 10px;
+}
+.delete {
+  color: #d34c0d;
+  border-radius: 10px;
+}

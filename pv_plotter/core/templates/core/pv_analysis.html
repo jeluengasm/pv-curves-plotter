@@ -1,0 +1,107 @@
+{% extends 'core/navbar.html' %}
+{% load static humanize %}
+
+{% block title %}
+Análisis de gráficos
+{% endblock title %}
+
+{% block class_header %}fixed-top header-inner-pages{% endblock class_header %}
+
+{% block content %}
+<br><br><br>
+  <div class="container canvas" id="canvas">
+    {{ figure|safe }}
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <label for="id_min_temperature">Temperatura mín.</label>
+        <input type="number" name="min_temperature" id="id_min_temperature">
+      </div>
+      <div class="col-sm">
+        <label for="id_max_temperature">Temperatura máx.</label>
+        <input type="number" name="max_temperature" id="id_max_temperature">
+      </div>
+      <div class="col-sm">
+        <label for="id_min_date">Fecha inicial</label><br>
+        <input type="date" name="min_date" id="id_min_date">
+      </div>
+      <div class="col-sm">
+        <label for="id_max_date">Fecha final</label><br>
+        <input type="date" name="max_date" id="id_max_date">
+      </div>
+    </div>
+    <div class="row d-flex justify-content-center p-3">
+        <button type="button" class="text-dark btn-filter"> Filtrar</button>
+    </div>
+  </div>
+
+<div class="container">
+  <table class="table table-striped table-hover table-bordered table-responsive">
+    <thead>
+      <tr>
+        <th>Acciones</th>
+        <th class="th-lg">Fecha de medición</th>
+        <th class="th-lg">Tipo de módulo</th>
+        <th class="th-lg">Referencia</th>
+        <th class="th-lg">Temperatura (°C)</th>
+      </tr>
+    </thead>
+    <tbody id="table-body"></tbody>
+  </table>
+  <div class="row  p-3 justify-content-center">
+    <div class="col col-md-3">
+      <label for="" class="form-label mb-2"> Importar archivo</label>
+      <input class="form-control mb-3 file-input" accept=".csv" type="file"/>
+    </div>
+    <div class="col col-md-3 align-middle">
+      <button type="button" class="text-dark btn-import" disabled data-url="{% url 'api:pv_analysis' %}">Subir</button>
+      {% csrf_token %}
+    </div>
+  </div>
+</div>
+<input type="hidden" name="data-table" data-url="{% url 'api:pv_analysis' %}">
+<input type="hidden" name="data-plot" data-url="{% url 'api:plot_data' %}">
+
+<div class="modal fade" id="modalEdit" tabindex="-1" role="dialog" aria-labelledby="modalEditLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalEditLabel">Editar medición</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="form-modal-edit">
+          <div class="form-group">
+            <label for="measure-date-edit" class="col-form-label">Fecha de medición:</label>
+            <input type="datetime-local" class="form-control" id="measure-date-edit" name="measure-date-edit">
+          </div>
+          <div class="form-group">
+            <label for="module-type-edit" class="col-form-label">Tipo de módulo:</label>
+            <textarea class="form-control" id="module-type-edit" name="module-type-edit"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="reference-edit" class="col-form-label">Referencia:</label>
+            <textarea class="form-control" id="reference-edit" name="reference-edit"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="temperature-edit" class="col-form-label">Temperatura (°C):</label>
+            <input type="number" class="form-control" id="temperature-edit" name="temperature-edit">
+          </div>
+          <input type="hidden" name="id-plot" id="id-plot" data-id>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-warning btn-edit-measure" data-bs-dismiss="modal">Editar</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}
+
+{% block script %}
+<script src="{% static 'js/pv-plotter.js' %}"></script>
+{% endblock script %}

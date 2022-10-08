@@ -58,8 +58,7 @@ The objective of this project is the implementation of a web application that pl
     DB_HOST=db
     DB_PORT=5432
     ```
-
-    The same credentials aren't necessary, they can be changed. However, if you want to restart the database, you must delete the `pv_plotter/data` folder.
+The same credentials aren't necessary, they can be changed. However, if you want to restart the database, you must delete the `pv_plotter/data` folder.
 
 - Open a terminal and go to the `pv_plotter/` folder.
 <br>
@@ -69,13 +68,13 @@ The objective of this project is the implementation of a web application that pl
     docker compose build
     ```
 
-    This command will create two containers of the `app` and `postgres` images (see `docker-compose.yml`). On the `app` image the environment variables are added to configure the database. In the case of the database, the variables to connect (or create) are configured, too. The `web` and `postgres_db` containers will be created.
+This command will create two containers of the `app` and `postgres` images (see `docker-compose.yml`). On the `app` image the environment variables are added to configure the database. In the case of the database, the variables to connect (or create) are configured, too. The `web` and `postgres_db` containers will be created.
     <br>
 - Execute the command:
     ```docker 
     docker compose up
     ```
-    This command will start the containers and open a connection to the Django server (default is [http://localhost:8000](http://localhost:8000)). If the server doesn't respond, stop the containers and re-run them with the above command. If you want to change the port, edit line `14` in `docker-compose.yml`.
+This command will start the containers and open a connection to the Django server (default is [http://localhost:8000](http://localhost:8000)). If the server doesn't respond, stop the containers and re-run them with the above command. If you want to change the port, edit line `14` in `docker-compose.yml`.
 
 ### Testing
 
@@ -88,5 +87,3 @@ The current proyect uses Pytest to run the tests, in order to verify that the AP
 ### Open browser
 
 The application will run in the following url: `http://localhost:8000`
-
-

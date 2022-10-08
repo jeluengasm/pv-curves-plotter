@@ -1,8 +1,7 @@
 # Photovoltaic Plotter
 
-
   - [Description](#description)
-    - [Developers](#developers)
+    - [Team](#team)
     - [Tools](#tools)
   - [Installation](#installation)
     - [For development](#for-development)
@@ -16,7 +15,7 @@ This project is an extension to the development of the photovoltaic curve tracer
 
 The objective of this project is the implementation of a web application that plots and manages I-V and P-V curves, obtained with the prototype curve tracer. This application requires a registration and authentication of the user who wants to use it. This application uses docker containers, in order to facilitate its development and deployment.
 
-### Developers
+### Team
 
 - Johanna Milena Yama Mora ([@JohannaYama](https://github.com/JohannaYama))
 - Juan Martin Vivas Camargo ([@JuanMartin1946](https://github.com/JuanMartin1946))
@@ -58,6 +57,7 @@ The objective of this project is the implementation of a web application that pl
 
 - To start the application in a development environment, it's necessary to create a file with the name `.env` in the `pv_plotter` folder of this project.
 <br>
+
 - In this file you'll add the environment variables that the application needs to start. It's necessary to add the following lines:
 
     ```yml

@@ -62,6 +62,7 @@ The same credentials aren't necessary, they can be changed. However, if you want
 
 - Open a terminal and go to the `pv_plotter/` folder.
 <br>
+
 - Execute the command:
 
     ```docker
@@ -70,7 +71,9 @@ The same credentials aren't necessary, they can be changed. However, if you want
 
 This command will create two containers of the `app` and `postgres` images (see `docker-compose.yml`). On the `app` image the environment variables are added to configure the database. In the case of the database, the variables to connect (or create) are configured, too. The `web` and `postgres_db` containers will be created.
     <br>
+
 - Execute the command:
+
     ```docker 
     docker compose up
     ```

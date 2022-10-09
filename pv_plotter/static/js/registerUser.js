@@ -7,6 +7,6 @@ function registerUser() {
         dataType: 'json',
         encode: true,
     }).done(function (data) {
-        window.location = button.dataset.success
+        console.log(data);
     });
 }

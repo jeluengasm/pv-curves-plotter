@@ -67,6 +67,8 @@ The objective of this project is the implementation of a web application that pl
     DB_PASSWORD=123
     DB_HOST=db
     DB_PORT=5432
+    DEBUG=1
+    SECRET_KEY=asdfghjklxcvbnmqwertyuioasdfghjkllkjhgfdsaasdftgbw
     ```
 The same credentials aren't necessary, they can be changed. However, if you want to restart the database, you must delete the `pv_plotter/data` folder.
 
@@ -100,3 +102,23 @@ The current proyect uses Pytest to run the tests, in order to verify that the AP
 ## Open browser
 
 The application will run in the following url: `http://localhost:8000`
+
+## Deployment
+
+This project uses Heroku and sets the project with Docker file. The following commandas are required to deploy the application:
+
+```console
+heroku login
+heroku create -a <name-of-your-app>
+heroku config:set SECRET_KEY=<secret-key-50-letters> -a <name-of-your-app>
+heroku container:login
+docker build -t registry.heroku.com/<name-of-your-app>/web .
+docker push registry.heroku.com/<name-of-your-app>/web
+heroku container:release -a <name-of-your-app> web
+```
+
+You must create a PostgreSQL database in Heroku and configure the credentials as environment variables. Add the same credentials that you see in [Environment setup](#environment-setup).
+
+This will run the container in the following Heroky URL.
+
+In this case, you can see the project in the URL: [https://pv-plotter.herokuapp.com/](https://pv-plotter.herokuapp.com/).

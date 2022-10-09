@@ -40,7 +40,7 @@ function enableOptions() {
                 'id': formData
             },
             success: function (response) {
-                let data = response[0][0]
+                let data = response[0]
                 $("#id-plot").data("id", data.id)
                 $("#measure-date-edit").val(data.measure_date.substring(0,16))
                 $("#module-type-edit").val(data.module_type)
@@ -102,7 +102,7 @@ function getTableData(){
                 success: function (response) {
                     $("#table-body").html("")
                     var str = ``
-                    response[0].forEach(element => {
+                    response.forEach(element => {
                         let datetime = new Date(element.measure_date)
                         datetime = datetime.toDateString()
                         str = str + `

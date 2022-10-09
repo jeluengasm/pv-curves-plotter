@@ -29,7 +29,7 @@ class PVData(models.Model):
         blank=True
     )
 
-    temperature = models.SmallIntegerField(
+    temperature = models.FloatField(
         verbose_name='temperatura',
         null=True
     )

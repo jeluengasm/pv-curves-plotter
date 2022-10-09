@@ -1,8 +1,6 @@
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
 from core.models import PVData
-from rest_framework.response import Response
-from rest_framework import status
 
 
 class UserTokenSerializer(serializers.ModelSerializer):

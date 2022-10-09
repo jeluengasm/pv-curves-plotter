@@ -66,7 +66,6 @@ class RegisterUserView(APIView):
             email=email,
             password=password
         )
-        # user = None
         if user is None:
             user = User.objects.create_user(
                 email=email,
@@ -108,7 +107,7 @@ class PVView(APIView):
         )
         return Response(
             {
-                'response': pv_data.id  # request.data['file']
+                'pv_data': pv_data.id
             },
             status=status.HTTP_201_CREATED
         )
@@ -135,15 +134,13 @@ class PVView(APIView):
         pv_data = PVData.objects.filter(filters)
 
         return Response(
-            {
-                pv_data.values(
-                    'id',
-                    'measure_date',
-                    'module_type',
-                    'reference',
-                    'temperature'
-                ),
-            },
+            pv_data.values(
+                'id',
+                'measure_date',
+                'module_type',
+                'reference',
+                'temperature'
+            ),
             status=status.HTTP_200_OK
         )
 
